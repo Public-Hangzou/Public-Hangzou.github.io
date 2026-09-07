@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: public-hangzou/public-hangzou.github.io # Replace with your exact repo name if different
+  branch: main # Or 'master', depending on your default branch
+
+# Where uploaded images will go
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Define the "Lessons" content type
+collections:
+  - name: "lessons"
+    label: "Lessons"
+    folder: "lessons"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Lesson Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Lesson Content", name: "body", widget: "markdown" }
